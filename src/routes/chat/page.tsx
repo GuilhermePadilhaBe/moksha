@@ -1,14 +1,16 @@
-import { Helmet } from '@modern-js/runtime/head'
+import { useChatStore } from '@/store/ducks/chat.store'
+import { useEffect } from 'react'
 
-const Index = () => (
-  <div>
-    <Helmet>
-      <link
-        rel='icon'
-        type='image/x-icon'
-        href='https://lf3-static.bytednsdoc.com/obj/eden-cn/uhbfnupenuhf/favicon.ico'
-      />
-    </Helmet>
+export default function Index() {
+  const { messages, fetchMessages, postMessage, loading } = useChatStore()
+
+  useEffect(() => {
+    fetchMessages()
+  }, [fetchMessages])
+
+  console.log(messages)
+
+  return (
     <main>
       <div className='flex flex-col items-center justify-center h-screen'>
         Welcome to
@@ -20,7 +22,5 @@ const Index = () => (
         <p className='name'>Modern.js</p>
       </div>
     </main>
-  </div>
-)
-
-export default Index
+  )
+}

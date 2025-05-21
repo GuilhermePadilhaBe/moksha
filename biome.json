@@ -13,8 +13,8 @@
   "javascript": {
     "formatter": {
       "quoteStyle": "single",
-      "arrowParentheses": "asNeeded",
-      "jsxQuoteStyle": "double",
+      "semicolons": "asNeeded",
+      "jsxQuoteStyle": "single",
       "lineWidth": 80
     }
   },
